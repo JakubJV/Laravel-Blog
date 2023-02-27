@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') / Lara Blog</title>
 
     <!-- Scripts -->
     @vite(['resources/js/app.js'])
@@ -22,10 +22,18 @@
 </head>
 <body>
    <header>
-
+        <nav>
+            <ul>
+                <li><a href="/">Domů</a></li>
+                <li><a href="/login">Přihlášení</a></li>
+                <li><a href="/register">Registrace</a></li>
+            </ul>
+        </nav>
    </header>
    <main>
-    
+        <div class="container">
+            @yield('content')
+        </div>
    </main>
 </body>
 </html>
