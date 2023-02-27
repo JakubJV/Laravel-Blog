@@ -22,13 +22,26 @@
 </head>
 <body>
    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Domů</a></li>
-                <li><a href="/login">Přihlášení</a></li>
-                <li><a href="/register">Registrace</a></li>
+    <div class="d-flex align-items-end">
+        <nav class="navbar navbar-expand-sm bg-light">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        Domů</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">
+                        Přihlášení
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">
+                        Registrace
+                    </a>
+                </li>
             </ul>
         </nav>
+    </div>
    </header>
    <main>
         <div class="container">

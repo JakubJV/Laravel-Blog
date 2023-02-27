@@ -5,7 +5,7 @@
 
 @section('content')
 
-<form method="POST" action="/" class="">
+<form method="POST" action="/users" class="">
     @csrf
     <div>
       <label class="" for="name"> Jméno </label>
