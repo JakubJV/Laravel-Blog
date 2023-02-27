@@ -9,6 +9,12 @@ class PostsController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function home()
+    {
+        return view('master');
+    }
+
     public function index()
     {
         //

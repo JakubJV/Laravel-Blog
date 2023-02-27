@@ -22,9 +22,22 @@
 </head>
 <body>
    <header>
-    <div class="d-flex align-items-end">
         <nav class="navbar navbar-expand-sm bg-light">
             <ul class="navbar-nav ml-auto">
+                @auth
+                <li>
+                    <span class="welcome">
+                      Vítej {{auth()->user()->name}}
+                    </span>
+                </li>
+                <li>
+                  <form class="logout" method="POST" action="/logout">
+                    @csrf
+                    <button type="submit" class="logout-button">
+                     Odhlášení
+                    </button>
+                  </form>
+                @else
                 <li class="nav-item">
                     <a class="nav-link" href="/">
                         Domů</a>
@@ -39,9 +52,9 @@
                         Registrace
                     </a>
                 </li>
+                @endauth
             </ul>
         </nav>
-    </div>
    </header>
    <main>
         <div class="container">

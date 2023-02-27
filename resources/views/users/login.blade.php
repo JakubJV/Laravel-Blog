@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form method="POST" action="" class="">
+<form method="POST" action="/users/authenticate" class="">
     @csrf
     <div>
         <label class="" for="email">Email</label>
