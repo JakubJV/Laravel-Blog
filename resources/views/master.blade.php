@@ -22,15 +22,20 @@
 </head>
 <body>
    <header>
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-light">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav">
                 @auth
-                <li>
+                <li class="nav-item ml-auto">
                     <span class="welcome">
                       Vítej {{auth()->user()->name}}
                     </span>
                 </li>
-                <li>
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" href="/create">
+                        Přidej příspěvek</a>
+                </li>
+                <li class="nav-item ml-auto">
                   <form class="logout" method="POST" action="/logout">
                     @csrf
                     <button type="submit" class="logout-button">
@@ -42,12 +47,12 @@
                     <a class="nav-link" href="/">
                         Domů</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ml-auto">
                     <a class="nav-link" href="/login">
                         Přihlášení
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ml-auto">
                     <a class="nav-link" href="/register">
                         Registrace
                     </a>
@@ -55,6 +60,7 @@
                 @endauth
             </ul>
         </nav>
+    </div>
    </header>
    <main>
         <div class="container">
