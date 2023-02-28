@@ -35,6 +35,10 @@
                     <a class="nav-link" href="/create">
                         Přidej příspěvek</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">
+                        Domů</a>
+                </li>
                 <li class="nav-item ml-auto">
                   <form class="logout" method="POST" action="/logout">
                     @csrf
@@ -44,7 +48,7 @@
                   </form>
                 @else
                 <li class="nav-item">
-                    <a class="nav-link" href="/">
+                    <a class="nav-link" href="/index">
                         Domů</a>
                 </li>
                 <li class="nav-item ml-auto">

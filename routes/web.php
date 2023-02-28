@@ -15,19 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Vrací landing page
 Route::get('/', [PostsController::class, 'home']);
 
+Route::get('/index', [PostsController::class, 'index']);
+
+// Posílá data o zaregistrovaném uživateli do databáze
 Route::post('/users', [UserController::class, 'store']);
 
+// Vrací přihlašovací formulář
 Route::get('/login', [UserController::class, 'login']);
 
+// Vrací registrační formulář
 Route::get('/register', [UserController::class, 'register']);
 
+// Odhlášení uživatele
 Route::post('/logout', [UserController::class, 'logout']);
 
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-//
+// Ukládá příspěvky do databáze
 Route::post('/create', [PostsController::class, 'store'])->name('store');
 
+// Vrací formulář pro vkládání příspěvků
 Route::get('/create', [PostsController::class, 'create']);
