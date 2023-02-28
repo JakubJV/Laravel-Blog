@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Vrací landing page
-Route::get('/', [PostsController::class, 'home']);
+// Route::get('/', [PostsController::class, 'home']);
 
 Route::get('/index', [PostsController::class, 'index']);
 
@@ -39,3 +39,6 @@ Route::post('/create', [PostsController::class, 'store'])->name('store');
 
 // Vrací formulář pro vkládání příspěvků
 Route::get('/create', [PostsController::class, 'create']);
+
+// Slouží pro vrácení jednoho konkrétního příspěvku
+Route::get('/post/{id}', [PostsController::class, 'show']);
