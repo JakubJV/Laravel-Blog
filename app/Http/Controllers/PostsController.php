@@ -38,11 +38,10 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = $request->title;
         $post->text = $request->text;
-        $post->slug = $request->slug;
         $post->user_id = auth()->user()->id;
         $post->save();
 
-        return redirect()->route('posts.index');
+        return redirect('/');
     }
 
     /**

@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('title', 200);
             $table->text('text');
-            $table->string('slug', 200);
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists();
     }
 };
