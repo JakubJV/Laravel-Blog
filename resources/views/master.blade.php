@@ -22,7 +22,7 @@
 </head>
 <body>
    <header>
-    <div class="container-fluid">
+    <div class="text-black">
         <nav class="navbar navbar-expand-sm bg-light">
             <ul class="navbar-nav">
                 @auth
