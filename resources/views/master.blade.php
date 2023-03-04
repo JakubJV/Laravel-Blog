@@ -19,48 +19,52 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="/css/style.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 </head>
 <body>
    <header>
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-12 justify-content-end">
-            <ul class="nav ml-auto">
+            <ul class="nav ml-auto d-flex align-items-center">
                 @auth
-                <li class="nav-item ml-auto">
-                    <span class="">
-                      Vítej {{auth()->user()->name}}
-                    </span>
-                </li>
-                <li class="nav-item ml-auto">
-                    <a class="nav-link" href="/create">
-                        Přidej příspěvek</a>
-                </li>
-                <li class="nav-item ml-auto">
-                    <a class="nav-link" href="/">
-                        Domů</a>
-                </li>
-                <li class="nav-item ml-auto">
-                  <form class="logout" method="POST" action="/logout">
-                    @csrf
-                    <button type="submit" class="btn btn-primary">
-                     Odhlášení
-                    </button>
-                  </form>
+                    <li class="nav-item">
+                        <span class="navbar-text text-primary">
+                        Vítej {{auth()->user()->name}}
+                        </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create"><i class="bi bi-file-post-fill text-primary me-1"></i>
+                            Přidej příspěvek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <i class="bi bi-house text-primary me-1"></i>Domů</a>
+                    </li>
+                    <li class="nav-item">
+                    <form class="logout ml-auto" style="padding-right: 10px;" method="POST" action="/logout">
+                        @csrf
+                        <button type="submit" class="btn btn-primary btn-sm">
+                        Odhlášení
+                        </button>
+                    </form>
+                    </li>
                 @else
-                <li class="nav-item ml-auto">
+                <li class="nav-item d-flex align-items-center">
                     <a class="nav-link" href="/">
-                        Domů</a>
+                        <i class="bi bi-house-door"></i>Domů</i></a>
                 </li>
-                <li class="nav-item ml-auto">
+                <li class="nav-item d-flex align-items-center">
                     <a class="nav-link" href="/login">
-                        Přihlášení
-                    </a>
+                        Přihlášení<i class="bi bi-door-open"></i></a>
                 </li>
-                <li class="nav-item ml-auto">
+                <li class="nav-item d-flex align-items-center">
                     <a class="nav-link" href="/register">
                         Registrace
-                    </a>
+                    <i class="bi bi-box-arrow-in-right"></i></a>
                 </li>
                 @endauth
             </ul>

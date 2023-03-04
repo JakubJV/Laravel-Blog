@@ -30,7 +30,6 @@
                     </form>
                     <a href="{{ url('post/edit', $post->id) }}" class="edit-post">Upravit příspěvek</a>
                     @endif
-                    <a href="{{ url('post', $post->id) }}" class="read-more">Přečti si víc</a>
                 </div>
             </footer>
         </article>
