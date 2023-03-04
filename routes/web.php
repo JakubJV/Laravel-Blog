@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // Vrací landing page
 // Route::get('/', [PostsController::class, 'home']);
 
-Route::get('/index', [PostsController::class, 'index']);
+Route::get('/', [PostsController::class, 'index']);
 
 // Posílá data o zaregistrovaném uživateli do databáze
 Route::post('/users', [UserController::class, 'store']);
@@ -42,3 +42,7 @@ Route::get('/create', [PostsController::class, 'create']);
 
 // Slouží pro vrácení jednoho konkrétního příspěvku
 Route::get('/post/{id}', [PostsController::class, 'show']);
+
+Route::get('/post/edit/{id}', [PostsController::class, 'edit'])->name('edit');
+
+Route::put('/post/edit/{id}', [PostsController::class, 'update'])->name('posts.update');

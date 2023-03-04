@@ -10,6 +10,7 @@
     <title>@yield('title') / Lara Blog</title>
 
     <!-- Scripts -->
+    @vite(['resources/sass/app.scss'])
     @vite(['resources/js/app.js'])
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
@@ -22,12 +23,12 @@
 </head>
 <body>
    <header>
-    <div class="text-black">
-        <nav class="navbar navbar-expand-sm bg-light">
-            <ul class="navbar-nav">
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light col-12 justify-content-end">
+            <ul class="nav ml-auto">
                 @auth
                 <li class="nav-item ml-auto">
-                    <span class="welcome">
+                    <span class="">
                       Vítej {{auth()->user()->name}}
                     </span>
                 </li>
@@ -35,20 +36,20 @@
                     <a class="nav-link" href="/create">
                         Přidej příspěvek</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/index">
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" href="/">
                         Domů</a>
                 </li>
                 <li class="nav-item ml-auto">
                   <form class="logout" method="POST" action="/logout">
                     @csrf
-                    <button type="submit" class="logout-button">
+                    <button type="submit" class="btn btn-primary">
                      Odhlášení
                     </button>
                   </form>
                 @else
-                <li class="nav-item">
-                    <a class="nav-link" href="/index">
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" href="/">
                         Domů</a>
                 </li>
                 <li class="nav-item ml-auto">

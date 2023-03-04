@@ -6,16 +6,13 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
 
-    public function home()
-    {
-        return view('master');
-    }
 
     public function index()
     {
@@ -62,7 +59,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -70,7 +68,11 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->text = $request->input('text');
+        $post->save();
+        return redirect()->route('posts.update', $post->id);
     }
 
     /**

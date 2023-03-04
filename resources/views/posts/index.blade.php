@@ -18,10 +18,11 @@
                             <small>/ {{ $post->created_at }}</small>
                         </time>
                     </h2>
-                <div class="post-content"></div>
+                <div class="post-content">
                     <p>
                         {{ Str::limit( $post->text, 250) }}
                     </p>
+                </div>
             </article>
 
         @empty

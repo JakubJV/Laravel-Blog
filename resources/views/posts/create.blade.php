@@ -4,7 +4,7 @@
 @section('content')
 
     <form method="post" action="{{route ('store')}}" accept-charset="UTF-8">
-        {{csrf_field()}}
+        @csrf
         <div class="container-fluid">
             <label class="" for="title">Nadpis</label>
             <input type="text" name="title"><br>

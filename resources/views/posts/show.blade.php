@@ -20,6 +20,12 @@
                     {{ $post->text }}
                 </p>
             </div>
+            <footer class="post-footer">
+                @if(Auth::check() && Auth::user()->id == $post->user_id)
+                    <a href="{{ url('post/edit', $post->id) }}" class="edit-post">Upravit příspěvek</a>
+                @endif
+                <a href="{{ url('post', $post->id) }}" class="read-more">Přečti si víc</a>
+            </footer>
         </article>
     </section>
 
