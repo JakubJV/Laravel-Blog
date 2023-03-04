@@ -43,6 +43,11 @@ Route::get('/create', [PostsController::class, 'create']);
 // Slouží pro vrácení jednoho konkrétního příspěvku
 Route::get('/post/{id}', [PostsController::class, 'show']);
 
+// Zobrazení Editačního formuláře
 Route::get('/post/edit/{id}', [PostsController::class, 'edit'])->name('edit');
 
+// Uložení upravených dat
 Route::put('/post/edit/{id}', [PostsController::class, 'update'])->name('posts.update');
+
+// Vymže daný příspěvek
+Route::delete('/post/{id}', [PostsController::class, 'destroy'])->name('posts.destroy');
