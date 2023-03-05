@@ -14,6 +14,9 @@
     @vite(['resources/js/app.js'])
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
+    <script src="//unpkg.com/alpinejs" defer></script>  
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -27,6 +30,13 @@
 </head>
 <body>
    <header>
+    @if(session()->has('message'))
+      <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show" class="flash-message">
+        <p>
+          {{ session('message') }}
+        </p>
+      </div>
+    @endif
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light col-12 justify-content-end">
             <ul class="nav ml-auto d-flex align-items-center">

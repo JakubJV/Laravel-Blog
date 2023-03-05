@@ -1,4 +1,52 @@
+body {
+    width: 100%;
+    text-align: center;
+    overflow-x: hidden;
+    margin: 0;
+}
+
 .nav-link:hover {
     background-color: #e5e5e5;
     transform: scale(0.9);
+}
+
+.post-list {
+    border: 2px solid #0d6efd;
+    margin-bottom: 50px;
+}
+
+/* Style pro název stránky */
+.box-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Style pro nadpis příspěvku */
+.post h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+/* Style pro datum příspěvku */
+.post time {
+    font-size: 1rem;
+}
+
+/* Style pro obsah příspěvku */
+.post-content {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.flash-message {
+    display: block;
+    position: fixed;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #0d6efd;
+    padding: 2px;
+    border-radius: 2px;
+    text-align: center;
+    z-index: 1000;
 }
