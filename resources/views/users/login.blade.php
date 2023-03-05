@@ -1,5 +1,5 @@
 @extends('master')
-@section('title', '')
+@section('title', 'Přihlášení')
 
 
 @section('content')
@@ -10,7 +10,7 @@
             @csrf
             <div class="form-group mt-sm-3">
                 <label for="exampleFormControlInput1">Email</label>
-                <input type="email" class="form-control mt-sm-1" id="exampleFormControlInput1" placeholder="name@example.com" value="{{old('email')}}" />
+                <input type="email" name="email" class="form-control mt-sm-1" id="exampleFormControlInput1" placeholder="name@example.com" value="{{old('email')}}" />
             </div>
             <div class="form-group mt-sm-3">
                 <label class="" for="password">Heslo</label>
