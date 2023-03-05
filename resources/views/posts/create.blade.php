@@ -2,15 +2,21 @@
 @section('title', 'Vytvoření příspěvku')
 
 @section('content')
+<div class="container text-primary">
+    <h1 class="box-heading text-center">Vytvoření příspěvku</h1>
+        <form method="post" action="{{route ('store')}}" accept-charset="UTF-8">
+            @csrf
 
-    <form method="post" action="{{route ('store')}}" accept-charset="UTF-8">
-        @csrf
-        <div class="container-fluid">
-            <label class="" for="title">Nadpis</label>
-            <input type="text" name="title"><br>
-            <label class="" for="text">Obsah</label>
-            <textarea name="text" class="" rows="5" cols="50"></textarea>
-            <button type="submit" class="">Přidat příspěvek</button>
-        </div>
-    </form>
+            <div class="form-group mt-sm-3">
+                <label for="title">Nadpis</label>
+                <input class="form-control mt-sm-1" type="text" name="title"><br>
+            </div>
+
+            <div class="form-group mt-sm-3">
+                <label class="" for="text">Obsah</label>
+                <textarea name="text" class="form-control mt-sm-1" rows="5" cols="50"></textarea>
+                <button type="submit" class="btn btn-primary mt-sm-3">Přidat příspěvek</button>
+            </div>
+        </form>
+</div>
 @endsection
