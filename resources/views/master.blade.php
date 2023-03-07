@@ -38,7 +38,7 @@
       </div>
     @endif
     <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light col-12 justify-content-end">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light col-12 justify-content-end mt-2">
             <ul class="nav ml-auto d-flex align-items-center">
                 @auth
                     <li class="nav-item">

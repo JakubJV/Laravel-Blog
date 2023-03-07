@@ -2,34 +2,34 @@
 @section('title', 'Všechny příspěvky')
 
 @section('content')
-    <div class="container">
-        <section class="box post-list bg-primary text-white p-3 rounded">
-            <h1 class="box-heading">
+    <div class="container mt-5">
+        <section class="box post-list bg-light text-blue p-3 rounded">
+            <h1 class="card-header text-capitalize mt-3">
                 Seznam Příspěvků 
             </h1>
 
             @forelse($posts as $post)
-
-                <article id="post-{{ $post->id }}" class="post mb-3">
-                    <header class="post-header"></header>
+            <div class="card mt-3 mb-4">
+                <div class="card-body">
+                    <header class="post-header">
                         <h2>
-                            <a href="{{ url('post', $post->id )}}" class="text-white">{{ $post->title }}</a>
+                            <a href="{{ url('post', $post->id )}}" class="text-blue">{{ $post->title }}</a>
                             <time>
                                 <small>/ {{ $post->created_at }}</small>
                             </time>
                         </h2>
+                    </header>
                     <div class="post-content">
-                        <p class="text-white">
+                        <p class="text-blue">
                             {{ Str::limit( $post->text, 250) }}
                         </p>
                     </div>
-                </article>
-
+                </div>
+            </div>
             @empty
-                <p class="text-white">Žádné příspěvky zde zatím nejsou.</p>
-
+            <p>Žádné příspěvky k zobrazení.</p>
             @endforelse
         </section>
     </div>
-
 @endsection
+

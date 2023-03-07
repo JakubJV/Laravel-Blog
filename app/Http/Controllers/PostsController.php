@@ -40,7 +40,7 @@ class PostsController extends Controller
         $post->user_id = auth()->user()->id;
         $post->save();
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Příspěvek vytvořen a uložen');
     }
 
     /**
@@ -72,7 +72,7 @@ class PostsController extends Controller
         $post->title = $request->input('title');
         $post->text = $request->input('text');
         $post->save();
-        return redirect()->route('posts.update', $post->id);
+        return redirect()->route('posts.update', $post->id)->with('message', 'Editace dokončena');
     }
 
     /**
@@ -84,6 +84,6 @@ class PostsController extends Controller
         $post = Post::find($id);
         $post->delete();
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Příspěvek byl odstraněn');
     }
 }

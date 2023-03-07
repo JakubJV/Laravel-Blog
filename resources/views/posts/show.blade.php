@@ -2,7 +2,7 @@
 @section('title', 'Příspěvek')
 
 @section('content')
-
+<div class="h-100 d-flex align-items-center justify-content-center mt-5">
     <section>
         <article class="post full-post">
 
@@ -34,5 +34,6 @@
             </footer>
         </article>
     </section>
+</div>
 
 @endsection

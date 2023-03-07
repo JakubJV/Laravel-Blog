@@ -3,8 +3,8 @@
 
 @section('content')
 <div class="container text-primary">
-    <h1 class="box-heading text-center">Vytvoření příspěvku</h1>
-        <form method="post" action="{{route ('store')}}" accept-charset="UTF-8">
+    <h1 class="box-heading text-center text-black mt-5">Vytvoření příspěvku</h1>
+        <form class="form mt-5"method="post" action="{{route ('store')}}" accept-charset="UTF-8">
             @csrf
 
             <div class="form-group mt-sm-3">
