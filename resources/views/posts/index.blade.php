@@ -4,7 +4,7 @@
 @section('content')
     <div class="container mt-5">
         <section class="box post-list bg-light text-blue p-3 rounded">
-            <h1 class="card-header text-capitalize mt-3">
+            <h1 class="text-center card-header text-capitalize mt-2">
                 Seznam Příspěvků 
             </h1>
 
@@ -29,6 +29,9 @@
             @empty
             <p>Žádné příspěvky k zobrazení.</p>
             @endforelse
+            <div class="paginate">
+                {{ $posts->links() }}
+            </div>
         </section>
     </div>
 @endsection
