@@ -21,14 +21,16 @@
                 </p>
             </div>        
             <footer class="post-footer">
-                <div>
+                <div class="form-group">
                     <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         @if(Auth::check() && Auth::user()->id == $post->user_id)
-                        <button type="submit" class="btn btn-danger">Smazat</button>  
+                        <button type="submit" class="btn btn-danger mt-3 py-2">Smazat</button>  
                     </form>
-                    <a href="{{ url('post/edit', $post->id) }}" class="edit-post">Upravit příspěvek</a>
+                    <span class="mr-50">
+                        <a href="{{ url('post/edit', $post->id) }}" class="btn btn-primary">Upravit příspěvek</a>
+                    </span>
                     @endif
                 </div>
             </footer>
