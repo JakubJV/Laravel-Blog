@@ -21,14 +21,6 @@ class UserController extends Controller
             'password' => 'required|confirmed|min:6'
         ]);
 
-        if ($request->fails()) {
-            return redirect('/register')
-                ->withErrors($request)
-                ->withInput();
-        }
-
-
-
         // Hash Password
         $formFields['password'] = bcrypt($formFields['password']);
 
