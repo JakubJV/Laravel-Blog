@@ -26,11 +26,13 @@
                         @csrf
                         @method('DELETE')
                         @if(Auth::check() && Auth::user()->id == $post->user_id)
-                        <button type="submit" class="btn btn-danger mt-3 py-2">Smazat</button>  
+                        <button type="submit" class="btn btn-danger mt-sm-3 ">Smazat</button>  
                     </form>
-                    <span class="mr-50">
-                        <a href="{{ url('post/edit', $post->id) }}" class="btn btn-primary">Upravit příspěvek</a>
-                    </span>
+                    <div class="mt-2">
+                        <span>
+                            <a href="{{ url('post/edit', $post->id) }}" class="btn btn-primary">Upravit příspěvek</a>
+                        </span>
+                    </div>
                     @endif
                 </div>
             </footer>
