@@ -34,16 +34,42 @@ class PostsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // public function store(Request $request)
+    // {
+    //     $post = new Post;
+    //     $post->title = $request->title;
+    //     $post->text = $request->text;
+    //     $post->user_id = auth()->user()->id;
+    //     $post->save();
+
+    //     $validate = $request->validate([
+    //         'title' => 'required|unique:posts|max:255',
+    //         'text' => 'required',
+    //     ]);
+
+    //     return redirect('/')->with('message', 'Příspěvek vytvořen a uložen');
+    // }
+
     public function store(Request $request)
     {
-        $post = new Post;
-        $post->title = $request->title;
-        $post->text = $request->text;
-        $post->user_id = auth()->user()->id;
-        $post->save();
+        $validate = $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'text' => 'required',
+        ]);
 
-        return redirect('/')->with('message', 'Příspěvek vytvořen a uložen');
+        if ($request->title && $request->text) {
+            $post = new Post;
+            $post->title = $request->title;
+            $post->text = $request->text;
+            $post->user_id = auth()->user()->id;
+            $post->save();
+
+            return redirect('/')->with('message', 'Příspěvek vytvořen a uložen');
+        } else {
+            return redirect()->back()->withInput()->withErrors(['title' => 'Pole nadpis a text jsou povinné.']);
+        }
     }
+
 
     /**
      * Display the specified resource.
