@@ -21,7 +21,6 @@
                 @foreach($posts as $post)
                     <tr>
                         <td>{{ $post->title }}</td>
-                        {{-- <td>{{ $post->user ? $post->user->name : 'Neznámý autor' }}</td> --}}
                         <td>{{ $post->user ? $post->user->email : 'Neznámý autor' }}</td>
                         <td>{{ $post->created_at }}</td>
                         <td>
