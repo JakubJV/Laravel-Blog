@@ -47,6 +47,10 @@
                         </span>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/admin"><i class="bi bi-file-post-fill text-primary me-1"></i>
+                            Administrace</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/create"><i class="bi bi-file-post-fill text-primary me-1"></i>
                             Přidej příspěvek</a>
                     </li>
