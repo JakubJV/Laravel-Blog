@@ -24,6 +24,9 @@
                             {{ Str::limit( $post->text, 250) }}
                         </p>
                     </div>
+                        <p class="mt-5">
+                            Vytvořeno uživatelem {{ $post->user->name }}
+                        </p>  
                 </div>
             </div>
             @empty
