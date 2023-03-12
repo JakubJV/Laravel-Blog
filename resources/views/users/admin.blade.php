@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{ $post->title }}</td>
                         {{-- <td>{{ $post->user ? $post->user->name : 'Neznámý autor' }}</td> --}}
-                        <td>{{ $post->user_id->id ?? 'neznámý autor' }}</td>
+                        <td>{{ $post->user ? $post->user->email : 'Neznámý autor' }}</td>
                         <td>{{ $post->created_at }}</td>
                         <td>
                             <form action="{{ route('admin.delete', $post->id) }}" method="post">
@@ -33,6 +33,7 @@
                                 </button>
                             </form>
                         </td>
+
                     </tr>
                 @endforeach
             </tbody>

@@ -54,6 +54,6 @@ Route::put('/post/edit/{id}', [PostsController::class, 'update'])->name('posts.u
 Route::delete('/post/{id}', [PostsController::class, 'destroy'])->name('posts.destroy');
 
 Route::prefix('admin')->group(function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/', [AdminController::class, 'index'])->name('admin');
     Route::delete('/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
 });
