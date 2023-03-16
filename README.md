@@ -4,3 +4,5 @@ Projekt vytvořen pomocí PHP frameworku Laravel. Jedná se o jednoduchý blog s
 Celý program napsaný v IDE VScode.
 
 Pro vytvoření webového lokálního serveru použit software XAMPP.
+
+Projekt funguje jako jednoduchý blog, kdy je možné se zaregistrovat, přihlásit a přidávat příspěvky, které následně může uživatel mazat, nebo editovat. 
